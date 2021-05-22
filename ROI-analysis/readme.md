@@ -7,10 +7,13 @@ They also give the same results as you would obtain from loading an SPM, inclusi
 ```matlab
 % Define where to save the ROI
 roi_output_path = 'G:\PhD\exp\data\derivatives\ROI\regions';
+
 % Define where to look for the `SPM.mat` design file
 spm_path = 'G:\PhD\exp\data\derivatives\GLM\memory\group\main_effect_hits\SPM.mat';
+
 % Create & save the ROI, return the sphere object & the fulle path to it (with name)
 [left_AG_ROI, roi_fpath] = make_roi([-30, -72, 42], 6, 'L_AG', roi_output_path);
+
 % Extract the beta weights
 y1 = extract_betas(spm_path, roi_fpath);
 ```
@@ -19,10 +22,13 @@ This could be repeated for a different contrast:
 ```matlab
 % Define where to save the ROI
 roi_output_path = 'G:\PhD\exp\data\derivatives\ROI\regions';
+
 % Define where to look for the `SPM.mat` design file
 spm_path = 'G:\PhD\exp\data\derivatives\GLM\memory\group\main_effect_correct_rejections\SPM.mat';
+
 % Create & save the ROI, return the sphere object & the fulle path to it (with name)
 [left_AG_ROI, roi_fpath] = make_roi([-30, -72, 42], 6, 'L_AG', roi_output_path);
+
 % Extract the beta weights
 y2 = extract_betas(spm_path, roi_fpath);
 ```
