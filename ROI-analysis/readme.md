@@ -32,7 +32,7 @@ spm_path = 'G:\PhD\exp\data\derivatives\GLM\memory\group\main_effect_correct_rej
 % Extract the beta weights
 y2 = extract_betas(spm_path, roi_fpath);
 ```
-And then y1 and y2 can be compared statistically.
+And then `y1` and `y2` can be compared statistically.
 
 This can easily be adapted for multiple ROIs and multiple contrasts. For example, I created a table called `ROI_definitions.csv` containing an ROI label, radius, and xyz coordinates for the left angular gyrus, precuneus, and anterior insula (L_AG, L_PCU, L_AI):
 
