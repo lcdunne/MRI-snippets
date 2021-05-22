@@ -1,5 +1,5 @@
 # Extracting beta weights for ROI analyses
-The `make_roi.m` and `extract_betas.m` contain convenience functions to avoid the hassle of clicking through the MarsBar GUI and manually extracting betas, which can be a bit tedious. These functions give the same results to MarsBar. 
+The `make_roi.m` and `extract_betas.m` contain convenience functions to avoid the hassle of clicking through the MarsBar GUI and manually extracting betas, which can be a bit tedious. These functions make use of MarsBar, and give the same results to what you get from using the MarsBar GUI.
 
 They also give the same results as you would obtain from loading an SPM, inclusively masking it with an ROI (`*.nii`), thresholding to 1 (uncorrected), snapping the marker to the global max, right-clicking, and selecting `Extract data --> whitened & filtered y --> This cluster` ([as demonstrated in this video](https://www.youtube.com/watch?v=zVuSHTJLJj4)).
 
