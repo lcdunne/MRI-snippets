@@ -33,3 +33,5 @@ spm_path = 'G:\PhD\exp\data\derivatives\GLM\memory\group\main_effect_correct_rej
 y2 = extract_betas(spm_path, roi_fpath);
 ```
 And then y1 and y2 can be compared statistically.
+
+This can easily be adapted for multiple ROIs and multiple contrasts, for example by reading in a table of ROI definitions, looping over each ROI, looping over each contrast file, and extracting the betas that way.
