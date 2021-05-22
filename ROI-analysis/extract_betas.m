@@ -8,12 +8,17 @@ function y = extract_betas(spm_path, roi_or_path)
     % roi_or_path : 'char' OR 'maroi_sphere'
     %     EITHER a path to the .mat file containing the
     %     ROI (e.g. outputted from `make_roi.m`) OR a loaded maroi sphere.
+    %
+    % RETURNS
+    % =======
+    % y     : 'double' (n x 1)
+    %     A vector of n beta weights extracted from the design.
     
     % Check if a sphere was given or not
     if isa(roi_or_path, 'maroi_sphere')
         roi = {roi_or_path};
     else
-        roi = maroi('load_cell', roi_path);
+        roi = maroi('load_cell', roi_or_path);
     end
     
     % Load the design & extract the betas
