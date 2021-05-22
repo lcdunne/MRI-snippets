@@ -34,4 +34,22 @@ y2 = extract_betas(spm_path, roi_fpath);
 ```
 And then y1 and y2 can be compared statistically.
 
-This can easily be adapted for multiple ROIs and multiple contrasts, for example by reading in a table of ROI definitions, looping over each ROI, looping over each contrast file, and extracting the betas that way.
+This can easily be adapted for multiple ROIs and multiple contrasts. For example, I created a table called `ROI_definitions.csv` containing an ROI label, radius, and xyz coordinates for the left angular gyrus, precuneus, and anterior insula (L_AG, L_PCU, L_AI):
+
+| label      | radius | x      | y | z |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| L_AG      | 6       | -30      | -72       | 42       |
+| L_PCU   | 6        | -8   | -66        | 30        |
+| L_AI   | 6        | -32   | 22        | -4        |
+
+By reading in this table, I looped over each ROI, then looped over each contrast in my analysis directory, and extracted the betas. The result looked like this (example here with just 2 participants):
+
+
+| index      | contrast | L_AG      | L_PCU | L_AI |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| 1      | hits       | 0.646941665621582      | 1.120690520792230       | -0.745793919404590       |
+| 2   | hits        | 0.361029489012050   | -0.082688451631040        | 0.708165565157324        |
+| 1      | correct_rejections       | 0.556142854419622      | 0.185282376556983       | 2.026709071504391       |
+| 2   | correct_rejections        | 0.556142854419622   | 0.185282376556983        | 2.026709071504391        |
+
+See `roi_beta_extract.m` for the code.
